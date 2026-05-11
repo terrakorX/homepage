@@ -1,4 +1,3 @@
-import "./Navbar.css";
 import { useState, useEffect } from "react";
 const RESUME_URL =import.meta.env.VITE_RESUME_URL
 console.log("Resume URL:", RESUME_URL);
@@ -57,24 +56,24 @@ export default function Navbar() {
     }, []);
 
     return (
-        <header className="portfolio-navbar" role="navigation" aria-label="Main">
-            <div className="nav-inner">
+        <header className="sticky top-0 z-50 backdrop-blur-sm bg-linear-to-b from-[rgba(19,19,21,0.6)] to-[rgba(19,19,21,0.35)] border-b border-white/5" role="navigation" aria-label="Main">
+            <div className="max-w-[1100px] mx-auto px-4 py-2.5 flex items-center justify-between gap-4">
                 <div
-                    className="brand"
+                    className="flex items-center gap-2.5 text-white font-bold no-underline cursor-pointer"
                     onClick={() => {
                         scrollTo("home");
                     }}
                     title="Go to home"
                 >
-                    <span className="dot" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-linear-to-r from-purple-600 to-cyan-400" />
                     <span>Nicolas Champion</span>
                 </div>
 
-                <nav className="nav-links" aria-label="Primary">
+                <nav className="flex gap-4 items-center max-md:hidden" aria-label="Primary">
                     {links.map((l) => (
                         <div
                             key={l.id}
-                            className={`nav-item ${active === l.id ? "active" : ""}`}
+                            className={`text-white/75 px-2.5 py-2 rounded-md no-underline cursor-pointer transition-all duration-150 font-medium text-sm hover:text-white hover:-translate-y-0.5 ${active === l.id ? "text-white bg-linear-to-r from-purple-600/12 to-cyan-400/8 shadow-[inset_0_-2px_0_rgba(255,255,255,0.03)]" : ""}`}
                             onClick={() => scrollTo(l.id)}
                             role="link"
                             tabIndex={0}
@@ -86,7 +85,7 @@ export default function Navbar() {
                         </div>
                     ))}
                     <a
-                        className="cta"
+                        className="bg-linear-to-r from-purple-600 to-cyan-400 text-white px-3 py-1.5 rounded-lg font-semibold border-none cursor-pointer no-underline"
                         href={RESUME_URL || "#"}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -97,19 +96,17 @@ export default function Navbar() {
                 </nav>
 
                 <button
-                    className="hamburger"
+                    className="hidden max-md:block bg-transparent border-none cursor-pointer text-white"
                     aria-label={open ? "Close menu" : "Open menu"}
                     aria-expanded={open}
                     onClick={() => setOpen((v) => !v)}
                 >
                     {open ? (
-                        // X icon
                         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
                             <path d="M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             <path d="M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                     ) : (
-                        // Hamburger
                         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
                             <path d="M3 12H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             <path d="M3 6H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -120,29 +117,23 @@ export default function Navbar() {
             </div>
 
             {open && (
-                <div className="mobile-menu" role="dialog" aria-modal="true">
-                    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                        <div style={{ color: "white", fontWeight: 800 }}>Firstname Lastname</div>
+                <div className="fixed inset-0 z-60 flex flex-col px-5 py-10 gap-4 bg-linear-to-b from-[rgba(6,6,7,0.96)] to-[rgba(12,12,13,0.98)]" role="dialog" aria-modal="true">
+                    <div className="flex items-center justify-between">
+                        <div className="text-white font-extrabold">Nicolas Champion</div>
                         <button
                             onClick={() => setOpen(false)}
-                            style={{
-                                background: "transparent",
-                                border: "none",
-                                color: "white",
-                                cursor: "pointer",
-                                fontSize: 20,
-                            }}
+                            className="bg-transparent border-none text-white cursor-pointer text-xl"
                             aria-label="Close menu"
                         >
                             ×
                         </button>
                     </div>
 
-                    <div className="mobile-links" role="menu">
+                    <div className="flex flex-col gap-1 mt-6" role="menu">
                         {links.map((l) => (
                             <div
                                 key={l.id}
-                                className={`mobile-item ${active === l.id ? "active" : ""}`}
+                                className={`text-white/90 px-4 py-3.5 rounded-lg bg-white/[0.02] cursor-pointer font-semibold ${active === l.id ? "bg-linear-to-r from-purple-600/14 to-cyan-400/6" : ""}`}
                                 onClick={() => scrollTo(l.id)}
                                 role="menuitem"
                                 tabIndex={0}
@@ -154,12 +145,11 @@ export default function Navbar() {
                             </div>
                         ))}
                         <a
-                            className="mobile-item"
-                            href=""
+                            className="text-white/90 px-4 py-3.5 rounded-lg bg-white/[0.02] cursor-pointer font-semibold no-underline"
+                            href={RESUME_URL || "#"}
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={() => setOpen(false)}
-                            style={{ textDecoration: "none" }}
                         >
                             Resume
                         </a>
