@@ -1,6 +1,7 @@
 import "./Navbar.css";
 import { useState, useEffect } from "react";
-
+const RESUME_URL =import.meta.env.VITE_RESUME_URL
+console.log("Resume URL:", RESUME_URL);
 const links = [
     { id: "home", label: "Home" },
     { id: "experience", label: "Experience" },
@@ -86,7 +87,7 @@ export default function Navbar() {
                     ))}
                     <a
                         className="cta"
-                        href="/resume.pdf"
+                        href={RESUME_URL || "#"}
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={() => setOpen(false)}
@@ -154,7 +155,7 @@ export default function Navbar() {
                         ))}
                         <a
                             className="mobile-item"
-                            href="/resume.pdf"
+                            href=""
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={() => setOpen(false)}

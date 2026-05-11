@@ -3,28 +3,31 @@ import "./Projects.css";
 
 const projects = [
     {
-        title: "Company Data Crawler",
-        image: "https://picsum.photos/seed/company-data/900/620",
-        shortDescription: "Crawler Rust pour extraire et enrichir des donnees d'entreprises.",
+        title: "Reddit Crawler",
+        image: "https://redditinc.com/hs-fs/hubfs/Reddit%20Inc/Content/Brand%20Page/Reddit_Logo.png?width=400&height=400&name=Reddit_Logo.png",
+        shortDescription: "Crawler reddit to make stats on post.",
         description:
-            "Un crawler oriente performance pour recuperer, nettoyer et enrichir des donnees publiques d'entreprises francaises. Le projet combine Rust, expressions regulieres, Docker et pipeline CI/CD pour produire une extraction fiable et maintenable.",
-        github: "https://github.com/",
+            "I realised a crawler with selenium that crawl data of post and make data out of it.",
+        github: "https://github.com/terrakorX",
     },
     {
-        title: "Mapping Feature",
-        image: "https://picsum.photos/seed/business-map/900/620",
-        shortDescription: "Visualisation cartographique de donnees publiques agregees.",
+        title: "airbnb pipeline",
+        image: "https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_B%C3%A9lo.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+        shortDescription: "crawl and extract airbnb data to make stats other appartment on the platform and automatise it with airflow.",
         description:
-            "Refonte d'une fonctionnalite de mapping pour rendre la visualisation des entreprises plus claire. Le systeme agrege plusieurs sources de donnees, les relie entre elles, puis les expose via une API utilisable par le front.",
-        github: "https://github.com/",
+            `A full data engineering project built around Airbnb open data to simulate a real-world analytics pipeline.
+The project collects raw datasets from Inside Airbnb and external market sources, processes and cleans the data, stores it in a PostgreSQL warehouse, and generates business KPIs and analytical reports.
+
+Designed as a training project for modern data workflows, it covers the complete lifecycle of a batch ETL pipeline`,
+        github: "https://github.com/terrakorX",
     },
     {
-        title: "Monitoring Module",
-        image: "https://picsum.photos/seed/monitoring-dashboard/900/620",
-        shortDescription: "Module de suivi des changements d'entreprises et secteurs.",
+        title: "Gamebook",
+        image: "https://click-quest.com/logo.png",
+        shortDescription: "Creation of an interactive book fantasy adventure.",
         description:
-            "Un module de monitoring qui observe les changements d'activite, les nouvelles publications et les signaux importants dans plusieurs sources. Il ajoute des watchers, un scheduler maison et une distribution via API ou site web.",
-        github: "https://github.com/",
+            "An interactive website where you can play fantasy adventure, without worrying about the dice pen or paper",
+        github: "https://github.com/terrakorX",
     },
 ];
 
@@ -64,7 +67,7 @@ export default function Projects() {
                         type="button"
                         onClick={() => setSelectedProject(project)}
                     >
-                        <img src={project.image} alt="" />
+                        <img  className="project-image" src={project.image} alt="" />
                         <div className="project-card-content">
                             <h3>{project.title}</h3>
                             <p>{project.shortDescription}</p>

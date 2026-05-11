@@ -163,11 +163,13 @@
 }
 
 .hero-avatar {
+    position: relative;
     width: 100%;
-    height: 74%;
+    height: 110%;
     display: grid;
     place-items: center;
     border-radius: 8px;
+    overflow: hidden;
     color: #ffffff;
     font-size: clamp(4rem, 9vw, 8rem);
     font-weight: 900;
@@ -176,12 +178,15 @@
         #14151f;
 }
 
-.hero-card img {
+.hero-avatar img {
     position: absolute;
-    right: -34px;
-    bottom: 62px;
-    width: 170px;
-    opacity: 0.78;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
+    opacity: 1;
     filter: drop-shadow(0 20px 35px rgba(124, 58, 237, 0.36));
 }
 
@@ -280,8 +285,9 @@
         box-sizing: border-box;
     }
 
-    .hero-card img {
-        right: 10px;
-        width: 126px;
+    .hero-avatar img {
+        inset: 0;
+        width: 100%;
+        height: 100%;
     }
 }

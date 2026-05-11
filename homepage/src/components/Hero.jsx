@@ -1,7 +1,6 @@
-import heroArt from "../assets/hero.png";
 import regexIcon from "../assets/regex.svg";
 import "./Hero.css";
-
+import PP from "../assets/PP.png";
 export default function Hero() {
     const tools = {front : [
         {
@@ -53,7 +52,7 @@ back :[ {
         { name: "Regex", logo: regexIcon },
         {
             name: "Airflow", logo:
-            "https://raw.githubusercontent.com/devicons/devicon/54cfe13ac10eaa1ef817a343ab0a9437eb3c2e08/icons/apacheairflow/apacheairflow-original.svg"
+            "https://raw.githubusercontent.com/devicons/devicon/7330accdbc47e2dc0c19789a48533c4a3c50fe58/icons/apacheairflow/apacheairflow-original.svg"
         },
 ]};
 
@@ -81,8 +80,7 @@ back :[ {
 
             <div className="hero-visual" aria-hidden="true">
                 <div className="hero-card">
-                    <div className="hero-avatar">NC</div>
-                    <img src={heroArt} alt="" />
+                    <div className="hero-avatar"><img src={PP} alt="" /></div>
                     <div className="hero-status">
                         <span />
                         Available for opportunities

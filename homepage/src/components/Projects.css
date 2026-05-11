@@ -55,10 +55,16 @@
 }
 
 .project-card img {
-    width: 100%;
-    aspect-ratio: 1.45;
-    object-fit: cover;
+    width: 200px;
+    height: 180px;
     display: block;
+    margin: 22px auto 0;
+    object-fit: contain;
+    object-position: center;
+    padding: 18px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.04);
+    box-sizing: border-box;
 }
 
 .project-card-content {
@@ -117,10 +123,15 @@
     line-height: 1;
 }
 
+
 .project-modal > img {
     width: 100%;
-    max-height: 390px;
-    object-fit: cover;
+    height: 240px;
+    object-fit: contain;
+    object-position: center;
+    padding: 24px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.035);
     display: block;
 }
 

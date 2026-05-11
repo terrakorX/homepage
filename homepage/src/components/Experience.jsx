@@ -1,5 +1,7 @@
 import "./Experience.css";
-
+import logoSociete from "../assets/Logo_Societe.png"
+import logoVinci from "../assets/Vinci_logo.png"
+import logoSfr from "../assets/SFR-2022-logo.svg"
 const experiences = [
     {
         period: "August 2022 -  May 2025",
@@ -14,7 +16,8 @@ the updated system throught an API.`,
             `Rebuilt a monitoring module to track company changes and sector activity in France, adding
 features such as watchers, integrating new data sources (BODACC, JAL) into a homemade
 scheduler, and distributing via API or website (Node.js).`],
-        stack: ["Rust", "Python", "Nodes.js", "Docker", "Redis", "PSQL"],
+                image : logoSociete,
+                        stack: ["Rust", "Python", "Nodes.js", "Docker", "Redis", "PSQL"],
     },
     {
         period: "November 2021 - May 2022",
@@ -25,6 +28,7 @@ scheduler, and distributing via API or website (Node.js).`],
 on roads, streamlining repairs based on mobile video footage.`, `
             Supervised data science interns in computer vision, providing a stable development
 environment and challenging their hardware needs`],
+image: logoVinci,
             stack: ["Python", "React", "Azure", "Docker"],
     },
     {
@@ -38,6 +42,7 @@ Industrialized an AI model (Python) and built an API from a data scientist's not
 streamline client follow-ups.`,
 `Redesigned acritical billing system (Python) for the B2B segment.`
            ],
+           image: logoSfr,
                stack: ["Python", "AI", "Vue.js"],
    },
 ];
@@ -55,17 +60,22 @@ export default function Experience() {
                     <article className="experience-item" key={`${item.period}-${item.role}`}>
                         <div className="experience-time">{item.period}</div>
                         <div className="experience-body">
-                            <h3>{item.role}</h3>
-                            <p className="experience-company">{item.company}</p>
-                            <ul className="experience-description">
-                                {item.description.map((desc) => (
-                                    <li key={desc}>{desc}</li>
-                                ))}
-                            </ul>
-                            <div className="experience-stack">
-                                {item.stack.map((tech) => (
-                                    <span key={tech}>{tech}</span>
-                                ))}
+                            <div>
+                                <h3>{item.role}</h3>
+                                <p className="experience-company">{item.company}</p>
+                                <div className="experience-desc-wrapper">
+                                    <img className="exeperience-logo" src={item.image} alt={item.image} />
+                                    <ul className="experience-description">
+                                        {item.description.map((desc) => (
+                                            <li key={desc}>{desc}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+                                <div className="experience-stack">
+                                    {item.stack.map((tech) => (
+                                        <span key={tech}>{tech}</span>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </article>
