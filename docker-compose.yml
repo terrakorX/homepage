@@ -1,6 +1,6 @@
 services:
   homepage:
-    build: ./homepage
+    build: .
     ports:
       - "8092:80"
     restart: unless-stopped
