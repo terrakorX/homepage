@@ -1,0 +1,48 @@
+```yaml
+hero:
+  name: "Your Name"
+  subtitle: "Your Role"
+  description: "Short bio about yourself."
+  avatar: "/images/your-photo.png"
+  tools:
+    front:
+      - name: "React"
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
+    back:
+      - name: "Python"
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+    other:
+      - name: "Docker"
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg"
+
+nav:
+  resumeUrl: "https://link-to-your-resume.pdf"
+  links:
+    - id: "home"
+      label: "Home"
+    - id: "experience"
+      label: "Experience"
+
+experiences:
+  - period: "2022 - Present"
+    role: "Developer"
+    company: "Company Name"
+    image: "/images/company-logo.png"
+    description:
+      - "What you did there."
+    stack:
+      - "React"
+      - "Node.js"
+
+projects:
+  - title: "Project Name"
+    image: "/images/project.png"
+    shortDescription: "One-liner about the project."
+    description: "Detailed description of the project."
+    github: "https://github.com/you/project"
+
+contact:
+  linkedin: "https://linkedin.com/in/you"
+  github: "https://github.com/you"
+  email: "you@example.com"
+```
