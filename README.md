@@ -105,3 +105,6 @@ Place your images (avatar, company logos, project screenshots) in the `public/im
 - Vite 8
 - Tailwind CSS 4
 - YAML parser (`yaml` package)
+
+## Favicon
+ Replace public/favicon-16x16.png and public/favicon-32x32.png with your own favicon files. You can generate them from any image at favicon.io (https://favicon.io/).

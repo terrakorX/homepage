@@ -1,13 +1,13 @@
 import useContent from '../hooks/useContent'
 
 export default function Experience() {
-  const { experiences } = useContent()
+  const { experiences, transition } = useContent()
 
   return (
     <section id="experience" className="px-6 py-24 text-white bg-[#0b0c12] border-t border-white/5 max-sm:px-4 max-sm:py-[72px]">
       <div className="max-w-[780px] mb-11 text-left max-sm:text-center max-sm:mx-auto">
         <p className="mb-4 text-cyan-300 text-xs font-extrabold tracking-[0.14em] uppercase">Experience</p>
-        <h2 className="m-0 text-white text-[clamp(2rem,4vw,4rem)] leading-[1.05] font-extrabold">Work built around interface quality and steady delivery.</h2>
+        <h2 className="m-0 text-white text-[clamp(2rem,4vw,4rem)] leading-[1.05] font-extrabold">{transition.experience}</h2>
       </div>
 
       <div className="grid gap-[18px]">

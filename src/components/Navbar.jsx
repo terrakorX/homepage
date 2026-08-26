@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import useContent from '../hooks/useContent'
 
 export default function Navbar() {
-  const { nav } = useContent()
+  const { nav , hero} = useContent()
   const links = nav.links
   const resumeUrl = nav.resumeUrl || import.meta.env.VITE_RESUME_URL
 
@@ -56,7 +56,7 @@ export default function Navbar() {
           title="Go to home"
         >
           <span className="w-2.5 h-2.5 rounded-full bg-linear-to-r from-purple-600 to-cyan-400" />
-          <span>Nicolas Champion</span>
+          <span>{hero.name}</span>
         </div>
 
         <nav className="flex gap-4 items-center max-md:hidden" aria-label="Primary">

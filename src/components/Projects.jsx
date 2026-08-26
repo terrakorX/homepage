@@ -72,14 +72,16 @@ export default function Projects() {
             <div className="p-7.5 text-left max-sm:p-5.5">
               <h3 id="project-modal-title" className="m-0 text-white text-[clamp(1.8rem,4vw,3rem)] leading-[1.05]">{selectedProject.title}</h3>
               <p className="max-w-[760px] mt-[18px] text-white/72 leading-[1.75]">{selectedProject.description}</p>
-              <a
-                className="inline-flex items-center justify-center min-h-[46px] mt-[26px] px-[18px] rounded-lg text-white bg-linear-to-r from-purple-600 to-cyan-400 font-extrabold no-underline focus-visible:outline-2 focus-visible:outline-cyan-300 focus-visible:outline-offset-[3px]"
-                href={selectedProject.github}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Visit GitHub
-              </a>
+              {!selectedProject.DisableGithub && (
+                <a
+                  className="inline-flex items-center justify-center min-h-[46px] mt-[26px] px-[18px] rounded-lg text-white bg-linear-to-r from-purple-600 to-cyan-400 font-extrabold no-underline focus-visible:outline-2 focus-visible:outline-cyan-300 focus-visible:outline-offset-[3px]"
+                  href={selectedProject.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Visit GitHub
+                </a>
+              )}
             </div>
           </article>
         </div>
